@@ -99,8 +99,7 @@ I'm always looking to improve my skills and this project. If you have any sugges
 ## 📧 Contact
 Tarik Mehinagic
 - GitHub: [@kiwiteaorion](https://github.com/kiwiteaorion)
-- LinkedIn: [Your LinkedIn]
-- Email: [Your Email]
+- Email: [imamovic.tari@gmail.com] (imamovic.tari@gmail.com)
 
 ## 📝 License
 This project is open source and available under the [MIT License](LICENSE).
