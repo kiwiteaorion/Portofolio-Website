@@ -1,0 +1,450 @@
+/* Reset and Variables */
+:root {
+  --bg-primary: #1a1a1d;
+  --bg-secondary: #1f1f23;
+  --text-primary: #e2e2e4;
+  --text-secondary: #a8a8b3;
+  --accent: #64ffda;
+  --font-mono: "JetBrains Mono", monospace;
+  --font-sans: "Inter", sans-serif;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --accent-color: #0984e3;
+  --accent-color-rgb: 9, 132, 227;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+}
+
+/* Navigation */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(10, 10, 10, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  padding: 1.5rem 0;
+}
+
+.nav-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+.logo {
+  font-family: var(--font-mono);
+  font-size: 1.5rem;
+  color: var(--accent);
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--text-primary);
+  text-decoration: none;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  transition: var(--transition);
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+/* Section Styles */
+section {
+  padding: 5rem 2rem;
+  position: relative;
+}
+
+section:nth-child(odd) {
+  background: var(--bg-primary);
+}
+
+section:nth-child(even) {
+  background: var(--bg-secondary);
+}
+
+.section-header {
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  font-family: var(--font-mono);
+  display: inline-block;
+  color: var(--text-primary);
+}
+
+.accent {
+  color: var(--accent);
+}
+
+/* Hero Section */
+#hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-text h1 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  font-family: var(--font-mono);
+}
+
+.subtitle {
+  color: var(--text-secondary);
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+/* Skills Section */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.skill-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  border-radius: 8px;
+  transition: var(--transition);
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.skill-list {
+  list-style: none;
+  margin-top: 1rem;
+}
+
+.skill-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Projects Section */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.project-card {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  padding: 2rem;
+}
+
+.project-card img {
+  width: 100%;
+  height: 200px; /* Adjust this value as needed */
+  object-fit: cover;
+  border-radius: 8px; /* Optional: for rounded corners */
+}
+
+.project-image {
+  flex: 0 0 40%; /* Takes up 40% of the space */
+  position: relative;
+}
+
+.project-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 10, 10, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.project-card:hover .project-overlay {
+  opacity: 1;
+}
+
+/* Buttons */
+.btn-outline {
+  padding: 0.8rem 1.5rem;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  text-decoration: none;
+  border-radius: 4px;
+  transition: var(--transition);
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+}
+
+.btn-outline:hover {
+  background: rgba(100, 255, 218, 0.1);
+}
+
+/* Contact Section */
+.contact-content {
+  padding: 4rem 2rem;
+  text-align: center;
+  position: relative;
+  background: linear-gradient(135deg, var(--bg-secondary), var(--bg-primary));
+  border-radius: 15px;
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.contact-link {
+  color: var(--text-primary);
+  text-decoration: none;
+  font-family: var(--font-mono);
+  transition: var(--transition);
+}
+
+.contact-link:hover {
+  color: var(--accent);
+}
+
+/* Footer */
+.footer {
+  padding: 2rem;
+  text-align: center;
+  background: var(--bg-light);
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav-content {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .hero-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .section-header h2 {
+    font-size: 2rem;
+  }
+}
+
+/* Fluid Animation Background */
+.fluid-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.fluid-shape {
+  position: absolute;
+  background: rgba(100, 255, 218, 0.05); /* Using your accent color */
+  border-radius: 50%;
+}
+
+.fluid-shape:nth-child(1) {
+  width: 600px;
+  height: 600px;
+  left: -300px;
+  top: -300px;
+  animation: fluid1 25s infinite alternate;
+}
+
+.fluid-shape:nth-child(2) {
+  width: 800px;
+  height: 800px;
+  right: -400px;
+  bottom: -400px;
+  animation: fluid2 30s infinite alternate;
+}
+
+@keyframes fluid1 {
+  0% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+    border-radius: 40%;
+  }
+  100% {
+    transform: translate(300px, 300px) rotate(360deg) scale(1.4);
+    border-radius: 60%;
+  }
+}
+
+@keyframes fluid2 {
+  0% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+    border-radius: 30%;
+  }
+  100% {
+    transform: translate(-200px, -200px) rotate(-360deg) scale(1.2);
+    border-radius: 50%;
+  }
+}
+
+/* Scroll Reveal Animations */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Gradient Text Animation */
+.gradient-text {
+  background: linear-gradient(45deg, var(--accent), #fff, var(--accent));
+  background-size: 200% auto;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: gradient 3s linear infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+/* Floating Animation */
+.float {
+  animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.about-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.about-text {
+  text-align: center;
+}
+
+.about-text .large-text {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--accent-color);
+}
+
+.about-text .body-text {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.skill-card.certificates {
+  grid-column: span 3; /* Makes it span full width */
+  margin-top: 2rem;
+}
+
+.skill-card.certificates .skill-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+}
+
+.cert-name {
+  font-weight: bold;
+}
+
+.cert-details {
+  color: var(--text-secondary);
+  font-size: 0.9em;
+}
+
+/* Contact section enhancements */
+.contact-content {
+  padding: 4rem 2rem;
+  text-align: center;
+  position: relative;
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2));
+  border-radius: 15px;
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+.contact-text {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.8s ease forwards;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.large-text.glow {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  color: var(--accent-color);
+  text-shadow: 0 0 10px rgba(var(--accent-color-rgb), 0.5);
+}
