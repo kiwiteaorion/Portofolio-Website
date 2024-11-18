@@ -448,3 +448,134 @@ section:nth-child(even) {
   color: var(--accent-color);
   text-shadow: 0 0 10px rgba(var(--accent-color-rgb), 0.5);
 }
+
+/* Add this to your CSS file */
+html {
+  scroll-behavior: smooth;
+}
+
+/* For better cross-browser support and custom duration, 
+   you can use this JavaScript solution instead */
+
+.project-links .btn {
+  display: inline-block;
+  padding: 6px 16px;
+  color: #2196f3;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.85rem;
+  position: relative;
+  border: 1.5px solid #2196f3;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  background: transparent;
+}
+
+.project-links .btn::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background: #2196f3;
+  z-index: -1;
+  transition: width 0.3s ease;
+}
+
+.project-links .btn:hover {
+  color: white;
+}
+
+.project-links .btn:hover::before {
+  width: 100%;
+}
+
+.project-links .btn:hover {
+  transform: scale(1.05);
+}
+
+.project-image {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.project-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+/* Overlay styling */
+.project-image::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Button container */
+.project-links {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Hover effects */
+.project-image:hover::after,
+.project-image:hover .project-links {
+  opacity: 1;
+}
+
+/* Button styling */
+.project-links .btn {
+  display: inline-block;
+  padding: 6px 16px;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.85rem;
+  position: relative;
+  border: 1.5px solid #2196f3;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  background: transparent;
+}
+
+.project-links .btn::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background: #2196f3;
+  z-index: -1;
+  transition: width 0.3s ease;
+}
+
+.project-links .btn:hover {
+  color: white;
+}
+
+.project-links .btn:hover::before {
+  width: 100%;
+}
+
+.project-links .btn:hover {
+  transform: scale(1.05);
+}
